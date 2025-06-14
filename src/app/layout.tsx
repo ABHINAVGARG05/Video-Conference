@@ -14,6 +14,7 @@ import './globals.css'
 import NavBar from '@/components/layout/NavBar'
 import Container from '@/components/layout/Container'
 import SocketProvider from '@/provider/SocketProvider'
+import { cn } from '@/lib/utils'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -33,8 +34,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
+        <body className={cn(`${geistSans.variable} ${geistMono.variable} antialiased`)}>
+          {/* <header className="flex justify-end items-center p-4 gap-4 h-16">
             <SignedOut>
               <SignInButton />
               <SignUpButton />
@@ -42,7 +43,7 @@ export default function RootLayout({
             <SignedIn>
               <UserButton />
             </SignedIn>
-          </header>
+          </header> */}
           <SocketProvider>
             <main className='flex flex-col min-h-screen bg-secondary'>
                 <NavBar />
