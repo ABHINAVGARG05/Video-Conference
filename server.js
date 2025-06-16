@@ -2,6 +2,8 @@ import { createServer } from "node:http";
 import next from "next";
 import { Server } from "socket.io";
 import onCall from "./src/socket-events/onCall.js";
+import onWebrtcSignal from "./src/socket-events/onWebrtcSignal.js"
+import onHangUp from "./src/socket-events/onHangUp.js";
 
 const dev = process.env.NODE_ENV !== "production";
 const hostname = "localhost";
@@ -40,7 +42,8 @@ app.prepare().then(() => {
 
     //call events
     socket.on('call', onCall)
-    
+    socket.on('webrtcSignal', onWebrtcSignal);
+    socket.on('hangup',onHangUp)
   });
 
   httpServer
