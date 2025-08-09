@@ -135,7 +135,7 @@ export const SocketContextProvider = ({children}:{children:React.ReactNode}) => 
         peer.on('error', console.error);
         peer.on('close',()=> handleHungUp({}))
 
-        const rtcPeerConnection: RTCPeerConnection = (peer as any)._pc
+        const rtcPeerConnection: RTCPeerConnection = (peer as unknown)._pc
     
         rtcPeerConnection.oniceconnectionstatechange = async()=> {
             if (rtcPeerConnection.iceConnectionState === 'disconnected'||
