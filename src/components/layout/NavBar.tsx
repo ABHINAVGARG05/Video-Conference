@@ -3,7 +3,7 @@
 import { Video } from "lucide-react"
 import Container from "./Container"
 import { useRouter } from "next/navigation"
-import { useAuth } from "@clerk/nextjs"
+//import { useAuth } from "@clerk/nextjs"
 
 const NavBar = () => {
   const router = useRouter()
